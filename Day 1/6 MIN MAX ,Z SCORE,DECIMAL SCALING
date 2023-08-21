@@ -1,0 +1,17 @@
+age <- c(23, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54, 54, 56, 57, 58, 58, 60, 61)
+value_to_normalize <- 35
+
+min_age <- min(age)
+max_age <- max(age)
+normalized_min_max <- (value_to_normalize - min_age) / (max_age - min_age)
+cat("Min-Max Normalized value:", normalized_min_max, "\n")
+
+mean_age <- mean(age)
+sd_age <- sd(age)
+normalized_z_score <- (value_to_normalize - mean_age) / sd_age
+cat("Z-Score Normalized value:", normalized_z_score, "\n")
+
+max_age_digit_count <- nchar(max_age)
+scale_factor <- 10^max_age_digit_count
+normalized_decimal_scaling <- value_to_normalize / scale_factor
+cat("Decimal Scaling Normalized value:", normalized_decimal_scaling, "\n")
