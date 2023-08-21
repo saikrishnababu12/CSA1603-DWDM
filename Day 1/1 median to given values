@@ -1,0 +1,11 @@
+intervals <- c(1, 5, 15, 20, 50, 80, 110)
+frequencies <- c(200, 450, 300, 1500, 700, 44)
+cumulative_freq <- cumsum(frequencies)
+total_freq <- sum(frequencies)
+half_total_freq <- total_freq / 2
+median_interval <- intervals[which(cumulative_freq >= half_total_freq)[1]]
+lower_bound <- median_interval - 1
+proportion <- (half_total_freq - cumulative_freq[which(intervals == median_interval) - 1]) / frequencies[which(intervals == median_interval)]
+interval_width <- intervals[which(intervals == median_interval) + 1] - lower_bound
+estimated_median <- lower_bound + (proportion * interval_width)
+cat("Estimated median:", estimated_median, "\n")
