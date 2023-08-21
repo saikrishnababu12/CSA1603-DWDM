@@ -1,0 +1,19 @@
+age <- c(23, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54)
+fat <- c(9.5, 26.5, 7.8, 17.8, 31.8, 25.9, 27.4, 27.2, 31.2, 34.6, 42.5)
+age_mean <- mean(age)
+age_median <- median(age)
+
+age_sd <- sd(age)
+
+fat_mean <- mean(fat)
+fat_median <- median(fat)
+fat_sd <- sd(fat)
+
+cat("Age - Mean:", age_mean, "Median:", age_median, "Standard Deviation:", age_sd, "\n")
+cat("Fat - Mean:", fat_mean, "Median:", fat_median, "Standard Deviation:", fat_sd, "\n")
+par(mfrow = c(1, 2))
+boxplot(age, main = "Age Boxplot", ylab = "Age")
+boxplot(fat, main = "Fat Boxplot", ylab = "Fat")
+plot(age, fat, main = "Scatter Plot: Age vs. Fat", xlab = "Age", ylab = "Fat")
+
+qqplot(age, fat, main = "Q-Q Plot: Age vs. Fat")
