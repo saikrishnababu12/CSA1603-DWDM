@@ -1,0 +1,6 @@
+points_scored <- c(10, 15, 20, 25, 30, 35, 40, 45, 50, 100)
+boxplot(points_scored, main="Distribution of Points Scored by Players", ylab="Points")
+title(main="Distribution of Points Scored by Players")
+xlabel <- "Players"
+ylabel <- "Points Scored"
+
